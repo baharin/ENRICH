@@ -30,6 +30,8 @@ add prerequisite here
 
 Installation Instructions
 --------------------------------------------
-add instructions here
+The following steps show how to setup our simulator for NTSS (SOHOSim) whose architecture is illustrated in the following figure:
 
+
+![architectureforgithub](https://user-images.githubusercontent.com/25382501/159575154-184381d7-96ef-44e0-a0b2-f847b68c0458.PNG)
 
