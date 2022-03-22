@@ -43,6 +43,6 @@ The following steps show how to setup our simulator for NTSS (SOHOSim) whose arc
 4. Create a third linux-based (linux 2.6 / 3.x / 4.x) virtual machine and add the OpenWrt disc image to it. Next, go to setting/network and set adapter 1 to the host-only ethernet adapter, and adapter 2 to bridged adapter and select the network adapter of the laptop. This machine will be the OpenWrt router (routVM).
 Note than adapter 2 of routVM and adapter of destVM should be the same.
 
-Next, we install nuttcp on userVM and dpinger on routVM:
-1. nuttcp can be either downloaded from http://nuttcp.net/nuttcp/nuttcp-8.1.4/nuttcp.c or directly installed by running the following command in terminal ```sudo apt-get install nuttcp```.
-2. 
+Next, we install nuttcp and dpinger:
+* Nuttcp is installed on userVm. It can be either downloaded from http://nuttcp.net/nuttcp/nuttcp-8.1.4/nuttcp.c or directly installed by running the following command in terminal ```sudo apt-get install nuttcp```.
+* In order to install dpinger on OpenWrt, we need to first follow the steps on building an OpenWrt image in: https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem. Next, we add the code of dpinger as a package to this image and *remake* the image. For simplicity, dpinger code can be added to the userVM as well. 
