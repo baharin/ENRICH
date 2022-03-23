@@ -41,7 +41,7 @@ The following steps show how to setup our simulator for NTSS (SOHOSim) whose arc
 2. Create a linux-based (Ubuntu 20.04) virtual machine and attach the created host-only adapter of step 1 to the virtual machine in the network tab of the setting. This machine will be the SOHO User (userVM). MENTION THIS VM HAS ONE IP.
 3. Create another linux-based (Ubuntu 20.04) virtual machine and attach the network adapter of the laptop (or any adapter that is used to connect to the internet) to adapter 1 (select bridged adapter at this step). This machine will be the traffic destination (destVM). MENTION 8 IPS HERE.
 4. Create a third linux-based (linux 2.6 / 3.x / 4.x) virtual machine and add the OpenWrt disc image to it. Next, go to setting/network and set adapter 1 to the host-only ethernet adapter, and adapter 2 to bridged adapter and select the network adapter of the laptop. This machine will be the OpenWrt router (routVM).
-Note than adapter 2 of routVM and adapter of destVM should be the same. MENTION THAT THIS MACHINE HAS TWO IPS.
+Note than adapter 2 of routVM and adapter of destVM should be the same. MENTION THAT THIS MACHINE HAS TWO IPS. MENTION HOW TO ADD THE MAPPING IN FIREWALL RULES.
 
 Next, we install nuttcp and dpinger:
 * Nuttcp is installed on userVm. It can be either downloaded from http://nuttcp.net/nuttcp/nuttcp-8.1.4/nuttcp.c or directly installed by running the following command in terminal ```sudo apt-get install nuttcp```.
