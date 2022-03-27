@@ -56,6 +56,51 @@ config rule
 
 Next, we install nuttcp and dpinger:
 * Nuttcp is installed on userVm. It can be either downloaded from http://nuttcp.net/nuttcp/nuttcp-8.1.4/nuttcp.c or directly installed by running the following command in terminal ```sudo apt-get install nuttcp```.
-* In order to install dpinger on OpenWrt, we need to first follow the steps on building an OpenWrt image in: https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem. Next, we add the code of dpinger as a package to this image and *remake* the image. For simplicity, dpinger code can be added to the userVM by cloning the github repository (https://github.com/dennypage/dpinger). 
+* In order to install dpinger on OpenWrt, we need to first follow the steps on building an OpenWrt image in: https://openwrt.org/docs/guide-developer/toolchain/use-buildsystem. Next, we add the code of dpinger as a package to this image and *remake* the image. For simplicity, dpinger code can be added to the userVM by cloning the dpinger github repository (https://github.com/dennypage/dpinger). 
 
 The config file (config.ini) is used to configure the setting of the ENRICH code. The file contains different sections covering information of the VMs (see table below):
+
+<table style="width:40%" class = "center">
+  <tr>
+    <th>Section</th>
+    <th>Information</th>
+  </tr>
+  <tr>
+    <td>routVM</td>
+    <td> 
+    	<ul>
+  			<li>IP of adapter 1 (lan)</li>
+  			<li>Username</li>
+  			<li>TotalBandwidth</li>
+		</ul>  
+    </td>
+  </tr>
+  <tr>
+    <td>userVM</td>
+    <td>
+      <ul>
+        <li>IP of adapter 1</li>
+        <li>Username</li>
+        <li>Password</li>
+      </ul> 
+    </td>
+  </tr>
+    <tr>
+    <td>destVM</td>
+    <td>
+      <ul>
+        <li>List of 8 IPs</li>
+      </ul> 
+    </td>
+  </tr>
+  <tr>
+    <td>dpinger</td>
+    <td>
+      <ul>
+        <li>Path to the report file</li>
+        <li>Name of report file</li>
+      </ul> 
+    </td>
+  </tr>
+  
+</table>
