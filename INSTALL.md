@@ -1,3 +1,12 @@
+Prerequisite
+---------------------------------------------
+* Python 3.8.10
+* Virtual Box 6.1
+* Ubuntu 20.04 disc image (https://ubuntu.com/download/desktop)
+* OpenWrt 19.0.7 (https://downloads.openwrt.org/releases/19.07.8/targets/x86/64/)
+* nuttcp 8.1.4 (http://nuttcp.net/nuttcp/nuttcp-8.1.4/nuttcp.c)
+* dpinger (https://github.com/dennypage/dpinger)
+
 Installation Instructions
 --------------------------------------------
 The following steps show how to setup our simulator for NTSS (SOHOSim) whose architecture is illustrated in the following figure:
@@ -73,4 +82,3 @@ The config file (config.ini) is used to configure the settings of ENRICH and BAS
   </tr>
   
 </table>
-
