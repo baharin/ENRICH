@@ -21,7 +21,6 @@ add description here
 
 Prerequisite
 ---------------------------------------------
-add prerequisite here
 * Python 3.8.10
 * Virtual Box 6.1
 * Ubuntu 20.04 disc image (https://ubuntu.com/download/desktop)
