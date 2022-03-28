@@ -48,8 +48,8 @@ config rule
         option target "DSCP'
         option set_dscp 'CSx' #where x is replaced by 0 to 7 indicating different traffic types
         option src 'lan'
-        list dest_ip '192.168.0.xx' #where dest_ip is replaced by each ip of destVM
-        option name 'NAME' #name of this rule
+        list dest_ip '192.168.0.xx' #where '192.168.0.xx' is replaced by each ip of destVM
+        option name 'NAME' #name of the rule
 ```
 By doing so, we route the traffic of type CS0 to 192.168.0.20, CS1 to 192.168.0.21, ..., CS7 to 192.168.0.27. Note that adapter 2 of routVM and adapter 1 of destVM should be the same.
 
