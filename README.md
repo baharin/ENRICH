@@ -17,7 +17,9 @@ add license here
 
 Content Description
 ----------------------------------------------
-add description here
+Folders:
+* ```Code```: contains the code of ENRICH, BASELINE and the code used for generating test cases from the ranges.
+* ```Evaluation```: contains two subfolders: ```RQ1`` and ```RQ2```. These folders contain the results of each research question.
 
 Prerequisite
 ---------------------------------------------
