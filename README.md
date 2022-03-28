@@ -70,6 +70,7 @@ The config file (config.ini) is used to configure the settings of ENRICH and BAS
     	<ul>
   			<li>IP of adapter 1 (lan)</li>
   			<li>Username</li>
+			<li>Password</li>
   			<li>TotalBandwidth</li>
 		</ul>  
     </td>
