@@ -642,7 +642,7 @@ def ExtractBounds(finalboundaries, listofallpaths):
 
     return array, bounds
 
-def AddToDataFrame(olddataa, selectedpoint, alldpingers, newfitness):
+def AddToDataFrame(olddataa, selectedpoint, alldpingers, newrobustnessmeasure):
     for i in range(len(alldpingers)):
         if alldpingers[i][0] == -1 or alldpingers[i][3] == -1:
             return olddataa, True
@@ -655,7 +655,7 @@ def AddToDataFrame(olddataa, selectedpoint, alldpingers, newfitness):
                                      int(alldpingers[6][0]), int(alldpingers[7][0]),
                                      float(alldpingers[0][3]), float(alldpingers[1][3]), float(alldpingers[2][3]),
                                      float(alldpingers[3][3]), float(alldpingers[4][3]), float(alldpingers[5][3]),
-                                     float(alldpingers[6][3]), float(alldpingers[7][3]), newfitness,
+                                     float(alldpingers[6][3]), float(alldpingers[7][3]), newrobustnessmeasure,
                                      400, 350, 306, 267, 234, 205, 179, 157]
 
     return olddataa, False
@@ -759,7 +759,7 @@ def GeneratePointsbyAdaptiveRandomSearch(finalboundaries): #newbounds
     time.sleep(41)
     KillDpinger()
     time.sleep(90)
-    alldpinger = ReadDpinger() 
+    alldpinger = ReadDpinger()
     alldpinger.reverse()
     for i in range(len(alldpinger)):
         if alldpinger[i][0] == -1 or alldpinger[i][3] == -1:
@@ -774,15 +774,15 @@ def GeneratePointsbyAdaptiveRandomSearch(finalboundaries): #newbounds
         time.sleep(41)
         KillDpinger()
         time.sleep(90)
-        alldpinger = ReadDpinger() 
+        alldpinger = ReadDpinger()
         alldpinger.reverse()
         for i in range(len(alldpinger)):
             if alldpinger[i][0] == -1 or alldpinger[i][3] == -1:
                 flag = True
                 break
 
-    fitnessofselectedpoints = []
-    fitnessofselectedpoints.append(alldpinger)
+    robustnessmeasureofselectedpoints = []
+    robustnessmeasureofselectedpoints.append(alldpinger)
     flag = False
     selectedpoints.append(newarray)
 
@@ -791,7 +791,7 @@ def GeneratePointsbyAdaptiveRandomSearch(finalboundaries): #newbounds
         randompoints = []
         for i in range(10):
             randompoints.append(GenerateArrayFromRanges(finalboundaries))
-        
+
         for i in range(len(randompoints)):
             minn = ComputeDistance(randompoints[i], selectedpoints)
             distancesofallpoints.append(minn)
@@ -805,7 +805,7 @@ def GeneratePointsbyAdaptiveRandomSearch(finalboundaries): #newbounds
         time.sleep(41)
         KillDpinger()
         time.sleep(90)
-        alldpinger = ReadDpinger() 
+        alldpinger = ReadDpinger()
         alldpinger.reverse()
         for i in range(len(alldpinger)):
             if alldpinger[i][0] == -1 or alldpinger[i][3] == -1:
@@ -813,9 +813,9 @@ def GeneratePointsbyAdaptiveRandomSearch(finalboundaries): #newbounds
 
         if flag == False:
             selectedpoints.append(newselectedpoint)
-            fitnessofselectedpoints.append(alldpinger)
+            robustnessmeasureofselectedpoints.append(alldpinger)
 
-    return selectedpoints, fitnessofselectedpoints
+    return selectedpoints, robustnessmeasureofselectedpoints
 
 def Normalize(alldpinger):
     for i in range(len(alldpinger)):
@@ -917,23 +917,23 @@ olddata = pd.DataFrame(columns=['TIN 0 Req-BW', 'TIN 1 Req-BW', 'TIN 2 Req-BW', 
 
 tinthresholds = [400, 350, 306, 267, 234, 205, 179, 157]
 
-initialbounds = [[(0, tinthresholds[0], 'upper')], [(0, tinthresholds[1], 'upper')], [(0, tinthresholds[2], 'upper')], [(0, tinthresholds[3], 'upper')], 
+initialbounds = [[(0, tinthresholds[0], 'upper')], [(0, tinthresholds[1], 'upper')], [(0, tinthresholds[2], 'upper')], [(0, tinthresholds[3], 'upper')],
              [(0, tinthresholds[4], 'upper')], [(0, tinthresholds[5], 'upper')], [(0, tinthresholds[6], 'upper')], [(0, tinthresholds[7], 'upper')]]
 
 newbounds = initialbounds
 i = 0
 while len(olddata.index) < 300:
 
-    newarray, fitnessofnewarray = GeneratePointsbyAdaptiveRandomSearch(newbounds)
+    newarray, dpingervaluesofnewarray = GeneratePointsbyAdaptiveRandomSearch(newbounds)
     DeleteFiles()
     DeleteRandomTrafficFiles()
     for j in range(len(newarray)):
-        alldpinger, _ = Normalize(fitnessofnewarray[j])
+        alldpinger, _ = Normalize(dpingervaluesofnewarray[j])
 
         if _ == False:
-            newfitness, _ = CalculateRobustnessMeasure(alldpinger)
-            olddata, flag = AddToDataFrame(olddata,newarray[j],alldpinger,newfitness)
-            
+            newrobustnessmeasure, _ = CalculateRobustnessMeasure(alldpinger)
+            olddata, flag = AddToDataFrame(olddata,newarray[j],alldpinger,newrobustnessmeasure)
+
     listofallpaths = MainProduceDecisionTree(olddata)
 
     separatedclasses = SeparateGoodandBad()
@@ -950,4 +950,3 @@ while len(olddata.index) < 300:
     i = i + 1
 
 WriteToExcel(olddata, "allthegenerateddata", "end")
-
