@@ -1,3 +1,13 @@
+# Here is the code for generating and modifying scenarios for BASELINE(resp.ENRICH).
+# Please note that it is assumed that this code and the config.ini file are currently
+# in the Documents directory and dpinger is in the home directory. In the case that 
+# the codes are in other directories, please update the file paths accordingly. 
+# Moreover, for simplicity there is no password set on our router.In the case that 
+# your router has a password, please update ssh script with the password.
+
+# author: Baharin A. Jodat - University of Ottawa
+# last update: 2022 - 04 - 13
+
 import time
 import random
 import pandas as pd
