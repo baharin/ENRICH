@@ -1,4 +1,4 @@
-# Here is the code for generating and modifying scenarios for BASELINE(resp.ENRICH).
+# Here is the code for generating and modifying scenarios for BASELINE.
 # Please note that it is assumed that this code and the config.ini file are currently
 # in the Documents directory and dpinger is in the home directory. In the case that 
 # the codes are in other directories, please update the file paths accordingly. 
@@ -285,8 +285,7 @@ oldalldpinger = alldpinger
 
 newarray = [0 for j in range(8)]
 
-olddata = pd.read_excel("Ranges - BASELINE.xlsx", header=0) #change the file name to "Ranges - ENRICH.xlsx" for ENRICH.
-
+olddata = pd.read_excel("Ranges - BASELINE.xlsx", header=0) 
 ranges = [[[] for j in range(8)] for i in range(10)]
 
 for i in range(len(olddata.index)):
@@ -299,7 +298,7 @@ for i in range(len(olddata.index)):
     ranges[i][6] = ast.literal_eval(olddata.loc[i, "Bounds TIN 6"])
     ranges[i][7] = ast.literal_eval(olddata.loc[i, "Bounds TIN 7"])
 
-for j in range(len(ranges)):# given a range of input variables for one run of an algorithm (BASELINE or ENRICH), we generate 10 scenarios and modify
+for j in range(len(ranges)):# given a range of input variables for one run of an algorithm (BASELINE), we generate 10 scenarios and modify
                             # (incremenet/decremenet) them.
     res = pd.DataFrame(columns=['TIN 0 Req-BW', 'TIN 1 Req-BW', 'TIN 2 Req-BW', 'TIN 3 Req-BW', 'TIN 4 Req-BW', 'TIN 5 Req-BW',
                                     'TIN 6 Req-BW', 'TIN 7 Req-BW', 'newfitness', 'TIN 0 Latency', 'TIN 1 Latency', 'TIN 2 Latency',
