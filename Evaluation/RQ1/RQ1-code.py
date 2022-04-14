@@ -35,12 +35,10 @@ def Distance(old, new, thresh):
   #one old and one new
   if old2[0][0] == -1 and new2[0][0] == -3:
     d1 = abs(old1[0][0] - new1[0][0]) / max(abs(0 - old1[0][0]), abs(old1[0][0] - thresh))
-    #print("a - c", abs(old1[0][0] - new1[0][0]))
     return d1
   #one old and two news
   elif old2[0][0] == -1 and new2[0][0] != -1:
     d1 = min(abs(old1[0][0] - new1[0][0])/max(abs(0 - old1[0][0]), abs(old1[0][0] - thresh)) , abs(old1[0][0] - new2[0][0])/max(abs(0 -old1[0][0]), abs(old1[0][0] - thresh)))
-    #print("a - c", abs(old1[0][0] - new1[0][0]))
     return d1
   #two old and one new
   elif old2[0][0] != -1 and new2[0][0] == -1:
