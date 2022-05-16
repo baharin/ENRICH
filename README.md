@@ -8,7 +8,7 @@ ENRICH (robustnEss ANalysis for tRaffIC SHaping) is an approach for identifying 
 
 
 <p align="center">
-  <img src="https://github.com/baharin/ENRICH/blob/main/ENRICH.PNG" width="450" height="200" class="centerImage" />
+  <img src="https://github.com/baharin/ENRICH/blob/main/ENRICH-figure.PNG" width="450" height="200" class="centerImage" />
 </p>
 
 License 
