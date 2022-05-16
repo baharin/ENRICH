@@ -36,7 +36,7 @@ Installation Instructions
 The following steps show how to setup our simulator for NTSS (SOHOSim) whose architecture is illustrated in the following figure:
 
 <p align="center">
-  <img src="https://github.com/baharin/ENRICH/blob/main/architectureforgithub.PNG" width="400" height="200" class="centerImage" />
+  <img src="https://github.com/baharin/ENRICH/blob/main/realworld%20system%20architecture.pdf" width="400" height="200" class="centerImage" />
 </p>
 On Virtualbox:
 
