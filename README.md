@@ -13,7 +13,7 @@ ENRICH (robustnEss ANalysis for tRaffIC SHaping) is an approach for identifying 
 
 License 
 --------------------------------------------
-add license here
+This software is released under GNU GENERAL PUBLIC LICENSE, Version 2. Please refer to the license.txt
 
 Content Description
 ----------------------------------------------
