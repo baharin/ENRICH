@@ -1,4 +1,4 @@
-ENRICH -- robustnEss aNalysis for tRaffIC sHaping
+ENRICH -- non-robustnEss aNalysis for tRaffIC sHaping
 ------------------------------------------------------------------------
 ENRICH (robustnEss ANalysis for tRaffIC SHaping) is an approach for identifying non-robust behaviours of Network Traffic Shaping Systems (NTSS). NTSS is composed of a set 𝐶 ={c<sub>1</sub>, . . ., c<sub>n</sub>} of 𝑛 classes. Each class c<sub>i</sub> has a bandwidth range [0..bwR<sub>i</sub>] where bwR<sub>i</sub> is the maximum bandwidth value of the traffic going through c<sub>i</sub>. ENRICH recieves as input a tuple (tr<sub>1</sub>, . . .,tr<sub>n</sub>) where each tr<sub>i</sub> is the bandwidth of the input traffic applied to class c<sub>i</sub>. The output of ENRICH is ranges on input traffics that lead to system’s non-robust behaviours.  ENRICH utilizes our robustness measure, adaptive random testing and machine learning decision trees to characterize non-robust behaviours.
 
