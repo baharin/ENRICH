@@ -73,7 +73,7 @@ The config file (```config.ini```) is used to configure the settings of ENRICH a
     </td>
   </tr>
   <tr>
-    <td>dpinger</td>
+    <td>Dpinger</td>
     <td>
       <ul>
         <li>Path to the report file</li>
