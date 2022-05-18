@@ -18,7 +18,7 @@ This software is released under GNU GENERAL PUBLIC LICENSE, Version 2. Please re
 Content Description
 ----------------------------------------------
 Folders:
-* ```Code```: contains the code of ENRICH, BASELINE and the code used for generating test cases from the ranges.
+* ```Code```: contains the code of ENRICH, BASELINE and the config file.
 * ```Evaluation```: contains two subfolders: ```RQ1``` and ```RQ2```. These folders contain the code used for each research question.
 * ```Results```: contains two subfolders: ```RQ1``` and ```RQ2```. These folders contain the results of each research question.
 
