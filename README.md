@@ -33,6 +33,9 @@ Prerequisite
 
 SOHOSim Installation Instructions
 --------------------------------------------
+SOHOSim consists of three virtual machines (VMs) created using VirtualBox: the first VM (VM1) simulates SOHO users, the second (VM2) simulates the router, and the third (VM3) simulates  external users. VM1 generates several data flows by executing separate instances of the <i>nuttcp tool </i> -- a client-server-based Linux application for generating network flows and measuring network performance. These data flows are routed to VM3 which runs the server component of nuttcp. VM2 runs a single instance of OpenWRT which is a Linux operating system primarily used on embedded devices to route network traffic. We configure VM2 to run Common Applications Kept Enhanced (CAKE); CAKE is an advanced and widely used traffic-shaping algorithm. VM2 runs dpinger as a probe tool to obtain MOS values.  VM1 and VM3 connect to the router (VM2) via virtual network adapters and links. 
+
+
 The following steps show how to setup our simulator for NTSS (SOHOSim) whose architecture is illustrated in the following figure:
 
 <p align="center">
