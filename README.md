@@ -1,6 +1,6 @@
 ENRICH -- non-robustnEss aNalysis for tRaffIC sHaping
 ------------------------------------------------------------------------
-ENRICH (non-robustnEss ANalysis for tRaffIC SHaping) is an approach for identifying non-robust behaviours of Network Traffic Shaping Systems (NTSS). NTSS is composed of a set 𝐶 ={c<sub>1</sub>, . . ., c<sub>n</sub>} of 𝑛 classes. Each class c<sub>i</sub> has a bandwidth range [0..bwR<sub>i</sub>] where bwR<sub>i</sub> is the maximum bandwidth value of the traffic going through c<sub>i</sub>. ENRICH recieves as input a tuple (tr<sub>1</sub>, . . .,tr<sub>n</sub>) where each tr<sub>i</sub> is the bandwidth of the input traffic applied to class c<sub>i</sub>. The output of ENRICH is ranges on input traffics that lead to system’s non-robust behaviours.  ENRICH utilizes our robustness measure, adaptive random testing and machine learning decision trees to characterize non-robust behaviours.
+ENRICH (non-robustnEss ANalysis for tRaffIC SHaping) is an approach that combines software testing and machine learning to generate input constraints for identifying non-robust behaviours of Network Traffic Shaping Systems (NTSS). The output of ENRICH is ranges on input traffics that lead to system’s non-robust behaviours.  ENRICH is evaluated using our NTSS simulator, named SOHOSim. SOHOSim is a fully virtual environment consisting of several virtual machines that enable us to simulate various network-usage scenarios. An overview of ENRICH is described below:
 
 * <p> <b> Test Generation (1). </b> Generate a set of test inputs for NTSS such that robustness measure for some test inputs is below robustness threshold and for some others is above robustness threshold. </p>
 * <p> <b> Model Building (2). </b> Given a test suite build models that help us recognize the conditions under which the system exhibits its non-robust behaviour. We use decision tree regression models in our work. </p>
@@ -31,7 +31,7 @@ Prerequisite
 * nuttcp 8.1.4 (http://nuttcp.net/nuttcp/nuttcp-8.1.4/nuttcp.c)
 * dpinger (https://github.com/dennypage/dpinger)
 
-Installation Instructions
+SOHOSim Installation Instructions
 --------------------------------------------
 The following steps show how to setup our simulator for NTSS (SOHOSim) whose architecture is illustrated in the following figure:
 
