@@ -84,7 +84,7 @@ def UpdateFinalData(finaldata, r, accuracy, chosenruns, numberofruns):
     return finaldata
 
 
-olddata = pd.read_excel("data.xlsx", header=0) #read the data for the desired epsilon
+olddata = pd.read_excel("data - epsilon 5% - ENRICH .xlsx", header=0) #read the data for the desired epsilon and approach
 
 finaldata = pd.DataFrame(columns=['NumofRuns', 'Recall', 'Accuracy', 'Run 0', 'Run 1', 'Run 2', 'Run 3', 'Run 4', 'Run 5', 'Run 6', 'Run 7', 'Run 8', 'Run 9', 'Run 10', 'Run 11', 'Run 12', 'Run 13', 'Run 14'])
 
@@ -104,4 +104,4 @@ for numberofruns in range(1,16):
         accuracy = CalculateAccuracy(olddata)
         finaldata = UpdateFinalData(finaldata, recall, accuracy, chosenruns, numberofruns)
 
-finaldata.to_excel('finaldata20times.xlsx')
+finaldata.to_excel('NumberofRuns VS Value for ENRICH - epsilon 5%.xlsx')
